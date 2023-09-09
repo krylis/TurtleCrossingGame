@@ -25,7 +25,7 @@ class CarManager:
     def __init__(self):
         self.cars = []
         self.generate_car()
-        self.move_distance = STARTING_MOVE_DISTANCE
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def generate_car(self):
         new_car = Car(position=(300, random.randint(-250, 250)))
@@ -33,7 +33,7 @@ class CarManager:
 
     def move_cars(self):
         for car in self.cars:
-            car.move(self.move_distance)
+            car.move(self.car_speed)
             if car.xcor() < -340:
                 self.remove_car(car)
 
@@ -42,5 +42,5 @@ class CarManager:
         car.clear()
 
     def increase_speed(self):
-        self.move_distance += MOVE_INCREMENT
+        self.car_speed += MOVE_INCREMENT
 

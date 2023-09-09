@@ -39,8 +39,8 @@ while game_is_on:
             game_is_on = False
 
     # detect if player gets to other side of road
-    if player.finished():
-        player.restart()
+    if player.at_finish_line():
+        player.go_to_start()
         car_manager.increase_speed()
         scoreboard.increase_level()
 
