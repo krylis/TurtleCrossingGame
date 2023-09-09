@@ -28,7 +28,7 @@ class CarManager:
         self.move_distance = STARTING_MOVE_DISTANCE
 
     def generate_car(self):
-        new_car = Car(position=(340, random.randint(-250, 250)))
+        new_car = Car(position=(300, random.randint(-250, 250)))
         self.cars.append(new_car)
 
     def move_cars(self):

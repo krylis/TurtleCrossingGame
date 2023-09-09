@@ -25,16 +25,20 @@ while game_is_on:
 
     num_of_loops += 1
 
+    # create a new car on every 6th loop
     if num_of_loops == 6:
         car_manager.generate_car()
         num_of_loops = 0
 
+    # move cars
     car_manager.move_cars()
 
+    # detect if car collides with player
     for car in car_manager.cars:
         if player.distance(car) < 20:
             game_is_on = False
 
+    # detect if player gets to other side of road
     if player.finished():
         player.restart()
         car_manager.increase_speed()
